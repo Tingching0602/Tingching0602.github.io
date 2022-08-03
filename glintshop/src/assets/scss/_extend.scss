@@ -1,0 +1,44 @@
+%position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%input-style {
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--main-color);
+  background: var(--body-bg);
+  padding: 0.5em;
+
+  &::placeholder {
+    color: var(--light-gray);
+  }
+
+  &:invalid {
+    color: var(--light-gray);
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--dark-gray);
+  }
+
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: "#{$i}";
+      font-size: 1rem;
+    }
+  }
+}
