@@ -1,3 +1,3 @@
 module.exports = {
-  publithPath: '/glintshop/dist/'
+  publicPath: process.env.NODE_ENV === "production" ? "/glintshop/dist/" : "/",
 }
